@@ -27,7 +27,7 @@ app.get("/URL", (req, res) => {
     </div>`);
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // $env:VARIABLE_NAME="VALUE"
 app.listen(PORT, () => {
     console.log(`Server is running at port: ${PORT}`);
 });
