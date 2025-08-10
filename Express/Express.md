@@ -38,3 +38,12 @@ provides clean, modular structure and adds a higher level of abstraction than ra
 <li>require('dotenv').config()</li>
 </ol>
 - Since Node.js has this feature, we will use build-in feature for that.
+
+##### If PORT is set using $env:VAR_NAME:"value" or set is used then probably we will see the PORT number as that even if we change it later. So **Remove-Item env:\PORT** This removes the set PORT number. We can check what port it is on using **echo $env:PORT**
+
+### Validating Environment Variables 
+- We might have env vars in our project, and it's important to validate each one to ensure they are all present and correct.
+- We can either handle this manually or, preferably, use a validation library like **ZOD**.
+- ZOD is a TypeScript-first schema declaration and validation library that allows to define and validate the structure of our data eaisly.
+- We will be using ZOD for various validations in the future, so we'll also use it here to validate env vars.
+
