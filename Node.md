@@ -161,3 +161,8 @@ In Node.js the path module provides utilities for working with file and director
 - Usage : Helps optimize code for multi-core processing.
 
 10. os.tmpdir() : Returns the default directory for temporary files.
+
+## File Systems (FS Module) :
+- The **fs(File System)** module in Node.js is a core module that allows us to work with the file system, enabling to **read, write, update, delete and watch files**.
+
+Let's see how to URUD operation in a Synchronous way. follow - "./syncfs.jsx'
