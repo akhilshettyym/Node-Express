@@ -166,3 +166,6 @@ In Node.js the path module provides utilities for working with file and director
 - The **fs(File System)** module in Node.js is a core module that allows us to work with the file system, enabling to **read, write, update, delete and watch files**.
 
 Let's see how to URUD operation in a Synchronous way. follow - "./syncfs.jsx'
+
+## fs/promises Module
+The fs/promise module provides a promise-based APi for interacting with filesystem, allowing asynchronous operations to be handled using modern JS features like async/await or .then() chains. It is part of the ts module in Node.js but designed for those who prefer promises over callback-based or synchronous methods.
