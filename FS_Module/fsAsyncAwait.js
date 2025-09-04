@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const path = require("path");
 
-const fileName = "asyncFile.txt";
+const fileName = "fsAsyncAwait.txt";
 const filePath = path.join(__dirname, fileName);
 
 
@@ -75,12 +75,12 @@ const appendFileExample = async () => {
 appendFileExample();
 
 // Unlink
-const deleteFileExample = async () => {
-    try{
-        await fs.unlink(filePath);
-        console.log("File deleted successfully ! : ");
-    }catch(error){
-        console.error("Error deleting file: ", error.message) ;
-    }
-}
-deleteFileExample();
+// const deleteFileExample = async () => {
+//     try{
+//         await fs.unlink(filePath);
+//         console.log("File deleted successfully ! : ");
+//     }catch(error){
+//         console.error("Error deleting file: ", error.message) ;
+//     }
+// }
+// deleteFileExample();
