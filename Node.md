@@ -202,3 +202,30 @@ The fs/promise module provides a promise-based APi for interacting with filesyst
 - Information about the project's author, license, repository, and other metadata.
 - Useful for documentation and collaboration.
 - You can also use **npm init -y** to create package.json quickly.
+
+## ES Modules
+- ES Modules (ECMAScript Modules) allow to use import and export syntax.
+They have been available in Node.js since version 12.
+- To enable ES Modules, we can either :
+Name the file with the .mjs extension, or
+Set "type": "module" in the package.json.(Recommended).
+- Use import and export instead of require and module.exports.
+- After Node.js v14.8, we can use top-level await when ES Modules are a more
+modern approach. Even if a package uses C
+can import it into ES Modules. However, importing ES Modules CommonJS may cause issues, as some packages have switched to ES Modules.
+
+
+---
+## NPM
+- npm is a popular package manager which comes bundled with Node.js.
+- It is a CLI tool used to install, update, and remove external packages.
+- Do not confuse npm CLI with npmjs.com, as it's a registry where most of the packages of Node.js are saved.
+- There are alternative Node.js package managers registry like JSR.
+
+### npm commands
+#### npm install package-name [ Alternatively we can use npm i ]
+- After installation, we notice a node_modules folder and package-lock.json.
+node_modules is what stores all the installed packages. It's usually heavy, so make sure to include it in .gitignore so that it wont get pushed on version control and avoid it while sharing with others.
+- You will notice that there are some packages whick we don't install. It's because the package that is installed depend on those third-party packages.
+- Now, we can use the package by importing normally as we do with core modules.
+- While importing first Node.js checks for cure modules, then files or folders, and at last looks inside node_modules.
