@@ -180,3 +180,25 @@ The fs/promise module provides a promise-based APi for interacting with filesyst
 - Writing or Appending Data to files without blocking the event loop.
 - Performing Multiple File Operations sequentially or concurrently with promise chaining.
 - Handling Errors GraceFully with .catch() or try... catch blocks.
+
+---
+# Package.json
+- package.json is a configuration file used in Node.js projects.
+- It contains metadata about the project and information on project dependencies.
+- Go to your project folder and use npm init to initialise the project or to create package.json.
+#### Name, Version, Description ("name", "version","description").
+- Specifies the name and version of the project.
+- Helps uniquely identify and version the project.
+
+#### Entry Point ("main"):
+- Specifies the main entry point file for the application.
+- The file executed when the application starts.
+
+#### Scrips :
+- Contains custom scrips for various tasks (e.g., running tests, starting the server).
+- Provides shortcuts for common development tasks.
+
+#### Author, License and More :
+- Information about the project's author, license, repository, and other metadata.
+- Useful for documentation and collaboration.
+- You can also use **npm init -y** to create package.json quickly.
