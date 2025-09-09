@@ -8,7 +8,7 @@ console.log("-------------------------------------------------------------------
 const fs = require('fs');
 const path = require('path');
 
-const fileName = "fssync.txt";
+const fileName = "a_syncfs.txt";
 const filePath = path.join(__dirname, fileName)
 const writeFile = fs.writeFileSync(filePath, "This is the first comment, updated", 'utf-8');
 
@@ -39,7 +39,7 @@ console.log("-------------------------------------------------------------------
 Syntax : fs.renameSync(oldPath, newPath);
 - oldPath : Current file path.
 - newPath : New file path or name. */
-const newUpdatedFile = "UpdatedSyncfs.txt";
+const newUpdatedFile = "a_UpdatedSyncfs.txt";
 const newFilePath = path.join(__dirname, newUpdatedFile);
 const renameFile = fs.renameSync(filePath, newFilePath);
 console.log("Renaming file :" + renameFile);
@@ -48,6 +48,7 @@ console.log("-------------------------------------------------------------------
 /* Delete File (fs.unlinkSync()) : Deletes a file by its path.
 Syntax : fs.unlinkSync(filePath);
 - filePath : The path of the file to delete. */
-const unlink = fs.unlinkSync(filePath);
-console.log("Unlinking file ..." + unlink);
+
+// const unlink = fs.unlinkSync(filePath);
+// console.log("Unlinking file ..." + unlink);
 // console.log("-------------------------------------------------------------------------------");

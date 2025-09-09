@@ -6,7 +6,7 @@ const fs = require("fs/promises"), Now we can just use fs...
 const fs = require("fs");
 const path = require("path");
 
-const fileName = "fsPromises.txt";
+const fileName = "c_fsPromises.txt";
 const filePath = path.join(__dirname, fileName);
 
 // .then() ensures clear chaining of multiple/asynchronous operations.

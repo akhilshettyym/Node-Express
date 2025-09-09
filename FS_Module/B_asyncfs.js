@@ -9,7 +9,7 @@ console.log("-------------------------------------------------------------------
 const fs = require('fs');
 const path = require('path');
 
-const fileName = "fsasync.txt";
+const fileName = "b_asyncfs.txt";
 const filePath = path.join(__dirname, fileName)
 const writeFile = fs.writeFile(filePath, "This is the first comment, updated", 'utf-8', 
     (err) => {
@@ -46,8 +46,9 @@ console.log("-------------------------------------------------------------------
 /* Delete File (fs.unlink()) : Deletes a file asynchronously.
 Syntax : fs.unlink(filePath, callback);
 - filePath : The path of the file to delete. */
-const unlink = fs.unlink(filePath, (err) => {
-    if(err) console.error(err);
-    else console.log("File has been deleted...")
-});
+
+// const unlink = fs.unlink(filePath, (err) => {
+//     if(err) console.error(err);
+//     else console.log("File has been deleted...")
+// });
 console.log("-------------------------------------------------------------------------------");
