@@ -225,7 +225,104 @@ can import it into ES Modules. However, importing ES Modules CommonJS may cause 
 ### npm commands
 #### npm install package-name [ Alternatively we can use npm i ]
 - After installation, we notice a node_modules folder and package-lock.json.
-node_modules is what stores all the installed packages. It's usually heavy, so make sure to include it in .gitignore so that it wont get pushed on version control and avoid it while sharing with others.
+**node_modules** is what stores all the installed packages. It's usually heavy, so make sure to include it in **.gitignore** so that it wont get pushed on version control and avoid it while sharing with others.
 - You will notice that there are some packages whick we don't install. It's because the package that is installed depend on those third-party packages.
 - Now, we can use the package by importing normally as we do with core modules.
 - While importing first Node.js checks for cure modules, then files or folders, and at last looks inside node_modules.
+
+#### - npm install
+- Even if node_modules is deleted, it can be used or get them all back by this command. It uses version specified in package-lock.json or package.json.
+#### - npm list
+- Becsue of symbols, the versions specified in package.json might not be installed.
+- To see the exact versions of all packages installed in the project.
+- Use -a flag to see whole list.
+#### - npm view <package-name>
+- To see details of a package that is installed including version, license, author, and so on.
+#### - npm view <package-name><package.json-property>
+- Example: npm view express version.
+- We can use it to view any property from package.json of a package.
+#### - npm view <package-name> versions
+- We can use it to see all versions of a package.
+
+### Semantic Version System. -  1.2.0
+- **1** Major Version ( Breaking change, a rebrand, feature set added).
+- **2** Minor Version ( Non-breaking noteworthy change, new component, updated styles).
+- **0** Patch Version ( Small request or bug fix, update or edit existing elements).
+
+### Symbols in dependency versions
+- **^(caret)**  Minor and patch updates allowed.    ^4.17.1
+- **~(Tilde)**  Only patch updates allowed.         ~4.17.1
+- **Exact**     Fixed Version.                      4.17.1
+- **>**         Greater than.                       >4.17.1
+- **<**         Less than.                          <4.17.1
+- **>=**        Greater than or equal to.           >=4.17.1
+- **<=**        Less than or equal to.              <=4.17.1
+- **Range**     Acceptable range                    4.16.0 - 4.17.1
+- **x**         Wildcard for minor/patch versions   4.x
+
+#### npm commands
+##### npm install <package-name>@<version>
+- npm install express@4.0.0 // ^4.0.0
+- npm install express@4.0.0 --save-exact // To install exact version.
+- npm install express@~4.0.0
+- npm install express@4.2.x
+- Symbols can be used while specifying versions.
+
+#### npm outdated
+- It shows outdated packages in the project.
+- Current: The version of the package currently installed in the project.
+- Wanted: The latest version that satisfies the version range defined in the package.json. It basically uses the symbols to get it.
+- Latest: Absolute latest version of the package.
+
+#### npm update
+- This updates all the packages in the project, but it follows the range defined in package.json. It dosen't update to absolutelatest version.
+
+#### npx npm-check-updates
+- npx is a CLI tool that comes with npm.
+- It is used to execute a package without requireing to install globally or locally.
+- It is useful for temporary usage of a package.
+- npm-check-updates is a package which you can use to upgrade your packages to absolute latest versions.
+- Use -u flag at the end to update the packages after reviewing.
+- This only updates package.json, then you can use npm install to update the packages.
+##### Run to update : npx npm-check-updates -u
+
+#### npm remove <package-name>
+
+### Global packages
+- Until now we know to install packages locally,
+- #### To install package globally,
+- npm install -g npm-check-updates
+- On Linux, and macOS, we need prefix of **sudo**.
+- This package gets installed globally, and we can access it anywhere.
+- We can try running npm-check-updates command anywhere in any projects without using npx.
+- **npm-check-updates** also have an alias named **ncu**. hich we can use.
+
+#### npm outdatd -g - to see outdatd global packages.
+- npm update -g <package-name>
+- npm remove -g <package-name>
+
+### Development dependency
+- Dev deps are packages that aren't needed for functioning of the project in prod.
+- This can be formatting, linting, testing and so on.
+- If npm install --production, these packages won't be installed, but they will be installed if you don't use production flag.
+- **npm install _D eslint**
+- This will install eslint as a dev dep.
+- You will see it in seperate property inside package.json named **"devDependencies"**.
+
+### Node.js Elements
+- **V8** Googles high-performance JavaScript engine that compiles JS into Machine code.
+- **Libuv** A **C library** that provides Node.js with cross-platform support for asynchronous I/O operations, file system, networking, and more.
+Includes the event loop and thread pool, enabling non-blocking tasks like file reading, networking, and timers.
+
+
+## MAIN THREAD => Top level code => Imports Modules => Registers Event Callbacks => Start Event Loop.
+- Top level code - Initializing varibles and code outside the functions.
+
+### Thread Pool 
+Thread #1
+Thread #2
+Thread #3
+Thread #4
+- Thread pool has a default of 4 threads.
+- Event loop, and thread pool are part of LIBUV which offloads heavy tasks to thread pool.
+- Heavy tasks include file system, cryptography, compression, etc.
