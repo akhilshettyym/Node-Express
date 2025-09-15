@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/akhilshettyym/Node-Express#readme",
   "dependencies": {
+    "chalk": "^5.6.2",
     "nodemon": "^3.1.10"
   }
 }
