@@ -11,11 +11,11 @@ const path = require('path');
 
 const fileName = "b_asyncfs.txt";
 const filePath = path.join(__dirname, fileName)
-const writeFile = fs.writeFile(filePath, "This is the first comment, updated", 'utf-8', 
+const writeFile = fs.writeFile(filePath, "This is the first comment, updated", 'utf-8',
     (err) => {
-        if(err) console.error(err);
+        if (err) console.error(err);
         else console.log("File has been saved...");
-});
+    });
 
 console.log("Directory " + __dirname);
 console.log("Writing into file ..." + writeFile);
@@ -29,15 +29,15 @@ Syntax : const data = fs.readFile(filePath, options, callback);
 
 Use .toString() if working with binary data (Buffer) : e.f., if you need both the raw binary data and its string representaion. */
 const data = fs.readFile(filePath, 'utf-8', (err, data) => {
-    if(err) console.error(err);
+    if (err) console.error(err);
     else console.log(data)
 });
 console.log("-------------------------------------------------------------------------------");
 
 /*  fs.appendFile() : Appends data to a file. If the file does not exists, it creates the file.
 Syntax : fs.appendFile(filePath, data, options, callback); */
-const appendFile = fs.appendFile(filePath, '\nAppending into a file', 'utf-8', (err)=>{
-    if(err) console.error(err);
+const appendFile = fs.appendFile(filePath, '\nAppending into a file', 'utf-8', (err) => {
+    if (err) console.error(err);
     else console.log("File has been updated...")
 });
 console.log("Appending into a file... : " + appendFile);

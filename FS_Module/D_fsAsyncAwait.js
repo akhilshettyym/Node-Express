@@ -33,10 +33,10 @@ Syntax: fsPromises.writeFile(path, data, options);
 */
 
 const writeFileExample = async () => {
-    try{
+    try {
         await fs.writeFile(filePath, "This is the initial data", "utf-8");
         console.log("File created successfully !");
-    }catch(error){
+    } catch (error) {
         console.error(error);
     }
 }
@@ -49,10 +49,10 @@ Syntax: fsPromises.readFile(path, options);
 - options: Optional. can specify encoding(e.g., 'utf8' or return a Buffer if no encoding is provided.)
 */
 const readFileExample = async () => {
-    try{
+    try {
         const data = await fs.readFile(filePath, "utf-8");
         console.log("File read successfully ! : ", data);
-    }catch(error){
+    } catch (error) {
         console.error(error);
     }
 }
@@ -65,10 +65,10 @@ Syntax: fsPromises.appendFile(path, data, options);
 - options: Optional. Can specify encoding (e.g., 'utf') or return a Buffer if no encoding is provided.
 */
 const appendFileExample = async () => {
-    try{
+    try {
         await fs.appendFile(filePath, "\n This is the updated Data", "utf-8");
         console.log("File updated successfully ! : ");
-    }catch(error){
+    } catch (error) {
         console.error(error);
     }
 }
