@@ -34,7 +34,7 @@
         list.innerHTML = "";
 
         for(const[shortCode, url] of Object.entries(links)) {
-          console.log(`${key}: ${value}`);
+          // console.log(`${key}: ${value}`);
           const li = document.createElement('li');
           li.innerHTML = `<a href="/${shortCode}" target="_blank"> ${window.location.origin}/${shortCode}</a>-${url}`
           list.appendChild(li);
