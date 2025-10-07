@@ -7,3 +7,9 @@
 - Use **npm install express** command to install Express.js
 - We are going to use Express.js v5 in this project which is already stable.
 - For some reasons, directly installing express installs v4, which is why, we can use **npm install express@5** to install latest version.
+
+#### import express from 'express';
+const app = express(); - express instance as it is the central obj that encapsulates all the functionality of web app.
+provides clean, modular structure and adds a higher level of abstraction than raw Node.js.
+
+#### NOTE - Adding **"type": "module"** will allow us to use import export functionalities  in a file.
