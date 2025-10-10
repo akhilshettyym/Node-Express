@@ -326,3 +326,32 @@ Thread #4
 - Thread pool has a default of 4 threads.
 - Event loop, and thread pool are part of LIBUV which offloads heavy tasks to thread pool.
 - Heavy tasks include file system, cryptography, compression, etc.
+
+
+## Working of WEB. (DNS, HTTP & HTTPS) :
+DNS - DOMAIN NAME SYSTEM
+
+                     website.com              GET 25.25.25...
+### CLIENT (BROWSER) -----------> DNS LOOKUP -----------> Server Node.js, Python, Go, Rust, Php ----> PostgreSQL(DATABSE)
+        |                                response                                |
+        --------------------------------------------------------------------------
+
+- DNS translates the domain (website.com) into server's IP address.
+- The browser sends an HTTP GET request to the server's IP address.
+- The server receives the request, processes it, and generates a response.
+- The server might also use database or fetch data from external service based on request.
+- The server sends the response (could be HTML, file JSON, etc.) back to teh client.
+- The client(browser) renderes the response for the user to view.
+
+## HTTP and HTTPS 
+- HTTP stands for **HyperTextTransferProtocol** and is used for transmitting data over the web.
+- It defines how requests and responses should look and how the server should handle them.
+- HTTP sends data in *plain text* making it vulnerable to interception and modification.
+
+- HTTPS is the secure version of HTTP, using SSL/TLS encryption to protect data during transmission.
+- The browser sends an HTTP/HTTPS requests to the server for a specific resource (e.g., webpage, image).
+- There are different HTTP methods like **GET, POST, PUT< DELETE, PATCH, etc.**.
+- HTTPS encrypts data using TLS/SSL, protecting it from unauthorized access.
+
+#### Transport Layer Security (TLS) and Secure Sockets Layer (SSL)
+- These two are security protocols that create an encrypted onnection between a client and a server, like web browser and a web-site.
